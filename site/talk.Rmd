@@ -1,0 +1,204 @@
+---
+title: "Talk"
+output: slidy_presentation
+---
+
+# Some links
+
+* Detailed git help for rstdio: https://happygitwithr.com/git-intro.html
+* https://bookdown.org/yihui/rmarkdown/basics.html
+* https://github.com/klmr/modules
+* [Analysis in a package / Vignettes](https://www.r-bloggers.com/creating-an-analysis-as-a-package-and-vignette/)
+  and [more background](http://r-pkgs.had.co.nz/vignettes.html)
+* [Clean functional code](https://towardsdatascience.com/cleaner-r-code-with-functional-programming-adc37931ef7a)
+
+
+# What is reproducible research?
+
+Or rather, what is reproducible data analysis?
+
+* Any research that involves statistical data analysis will usually contain many figures and tables of statistical results, and also numerous statistical results within the text. 
+
+* The goal of reproducible research --- or rather, *reproducible data analysis* --- is that anyone working independently could recreate all of these results exactly.
+
+
+(This slide was taken from https://github.com/mark-andrews/sips2019)
+
+# Necessary criteria for reproducible data analysis
+
+* The following three criteria seem necessary for a given data analysis to be reproducible.
+
+  1. The *raw* data must be available. Data that is processed and "cleaned up" is not sufficient. 
+  2. All the code for all the analysis must be available. All the code for all the data analysis pipeline is required, as are the scripts and build tools that execute the code. 
+  3. The reports of the analysis, e.g., journal articles, presentations slides, etc, must be made by *dynamic documents*. 
+
+* @gentleman2007statistical introduced the concept of a *research compendium*, which is a single package that contains all of the raw data, all the code for all the data analysis pipeline, and dynamic documents that generate all the final reports.
+
+
+(This slide was taken from https://github.com/mark-andrews/sips2019)
+
+# Software tools for reproducible data analysis
+
+* RMarkdown (and knitr, pandoc, \LaTeX, etc
+* Git & GitHub (version control)
+* Packrat (package manager)
+* testthat
+* Docker
+
+* clean code
+* documenting code
+  
+# What is git?
+
+* Distributed version control (you have to whole repo locally)
+* Many advantages even when used without a server
+
+# Why use git?
+
+* Backup
+* Versioning
+* Easy to collaborate
+* Easy to try things (revert if things break)
+* Easy to check what you changed (why you broke it)
+* Easier to check when you broke something ([bisect](https://git-scm.com/docs/git-bisect "Click when you need it"))
+
+# Git
+
+<img src="images/git_branches.png" style="float: right" />
+
+* commit (often!)
+* branch
+* master (default branch)
+* remote
+* clone
+* pull
+* push
+* merge
+* rebase
+* staging area
+* tag (https://github.com/hampei/rstuff/releases)
+* sha
+* stash
+* wip
+
+# Staging, local, remote
+
+![Staging area to local to remote](images/git_areas.png)
+
+# Github.com
+
+* README.md entrypoint for most software projects.
+* github pages
+* pull request
+* fork
+
+# exercise
+
+* Open README.md and add a line
+* Go to git panel
+* click diff button
+* right click file and select revert
+
+* Click create branch top right, next to master
+* enter a branchname
+* Edit README.md again
+* click commit
+* select file
+* enter a message and click commit
+* click push.
+
+# Exercise continued
+
+* goto https://github.com/hampei/rstuff/network/members
+* select your fork
+* click `New pull request`
+* select your branch on the right
+* click `Create pull request` 
+* Goto `Files changed`
+* mouseover a changed line and click `+` that appears
+* type and `start a review`
+* top right `Finish your review`
+* comment, select `Approve` and Submit.
+
+# Packrat
+
+* all libraries are installed within your project
+* packrat.lock saves which exact version of each library you are using
+* packrat::restore()
+* packrat::snapshot()
+
+# Coding style
+
+* keep your functions short, preferably less than 10 lines, it must fit on a page
+* have a function do one thing, and give it a good name
+* name arguments, unless it's completely clear what it does: `mean(1:10, na.rm = TRUE)`
+* give variable good names (no a,b and c)
+* do not use magic numbers
+* functions should either have no side effects or only side effects
+* comments explain why, if your explain what the code does, consider refactoring.
+
+* DRY (don't repeat yourself)
+* KISS (keep it simple stupid)
+* YAGNI (you aint gonna need it)
+
+
+# Coding style syntax R
+
+* Be consistent.
+* Use https://style.tidyverse.org/ for R if there's no reason for a different one.
+
+* function names: lower case, numbers and underscores: `calc_the_thing()`
+* always a space after a comma, never before: `x[, 1]`
+* spaces: `mean(x, na.rm = TRUE)`, `x == y`, `x <- y`
+* keep lines under 80ish characters
+* one command per line, don't use `;`
+
+# functions
+
+* strive to use verbs
+* align arguments when the line gets too long
+
+
+```
+add_a_to_b <- function(a = "a long argument",
+                       separator = ", ",
+                       b = "another long argument") {
+  str_c(a, separator, b) # only use return for early returns
+}
+```
+
+# Pipes
+
+* Use pipes for a sequence of actions
+
+```R
+bop(
+  scoop(
+    hop(foo_foo, through = forest),
+    up = field_mice
+  ), 
+  on = head
+)
+```
+
+```R
+foo_foo <- hop(foo_foo, through = forest)
+foo_foo <- scoop(foo_foo, up = field_mice)
+foo_foo <- bop(foo_foo, on = head)
+```
+
+```R
+foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mice) %>%
+  bop(on = head)
+```
+
+# some command for the command line
+
+Some things can't be done within rstudio.
+
+* `git stash` save uncommitted changes and reset to last commit
+* `git stash pop` apply the last stashed change 
+* `git reset --hard origin/master` dangerously throw away local changes and go back to what's on the server
+* `git revert head` make a new commit that reverses the previous one

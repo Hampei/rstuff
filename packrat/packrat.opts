@@ -6,7 +6,9 @@ vcs.ignore.src: TRUE
 external.packages: 
 local.repos: 
 load.external.packages.on.startup: TRUE
-ignored.packages: 
+ignored.packages:
+    usethis
+    rstuff
 ignored.directories:
     data
     inst
