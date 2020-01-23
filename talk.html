@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Talk</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link href="site_libs/slidy-2/styles/slidy.css" rel="stylesheet" />
+  <script src="site_libs/slidy-2/scripts/slidy.js"></script>
+  <script src="site_libs/slidy_shiny-1/slidy_shiny.js"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Talk</h1>
+  <p class="author">
+
+  </p>
+</div>
+<div id="some-links" class="slide section level1">
+<h1>Some links</h1>
+<ul>
+<li>Detailed git help for rstdio: <a href="https://happygitwithr.com/git-intro.html" class="uri">https://happygitwithr.com/git-intro.html</a></li>
+<li>[gihub desktop]((<a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a>) for things you can’t do under rstudio</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/basics.html" class="uri">https://bookdown.org/yihui/rmarkdown/basics.html</a></li>
+<li><a href="https://github.com/klmr/modules" class="uri">https://github.com/klmr/modules</a></li>
+<li><a href="https://www.r-bloggers.com/creating-an-analysis-as-a-package-and-vignette/">Analysis in a package / Vignettes</a> and <a href="http://r-pkgs.had.co.nz/vignettes.html">more background</a></li>
+<li><a href="https://towardsdatascience.com/cleaner-r-code-with-functional-programming-adc37931ef7a">Clean functional code</a></li>
+</ul>
+</div>
+<div id="what-is-reproducible-research" class="slide section level1">
+<h1>What is reproducible research?</h1>
+<p>Or rather, what is reproducible data analysis?</p>
+<ul>
+<li><p>Any research that involves statistical data analysis will usually contain many figures and tables of statistical results, and also numerous statistical results within the text.</p></li>
+<li><p>The goal of reproducible research — or rather, <em>reproducible data analysis</em> — is that anyone working independently could recreate all of these results exactly.</p></li>
+</ul>
+<p>(This slide was taken from <a href="https://github.com/mark-andrews/sips2019" class="uri">https://github.com/mark-andrews/sips2019</a>)</p>
+</div>
+<div id="necessary-criteria-for-reproducible-data-analysis" class="slide section level1">
+<h1>Necessary criteria for reproducible data analysis</h1>
+<ul>
+<li><p>The following three criteria seem necessary for a given data analysis to be reproducible.</p>
+<ol style="list-style-type: decimal">
+<li>The <em>raw</em> data must be available. Data that is processed and “cleaned up” is not sufficient.</li>
+<li>All the code for all the analysis must be available. All the code for all the data analysis pipeline is required, as are the scripts and build tools that execute the code.</li>
+<li>The reports of the analysis, e.g., journal articles, presentations slides, etc, must be made by <em>dynamic documents</em>.</li>
+</ol></li>
+<li><p><span class="citation">@gentleman2007statistical</span> introduced the concept of a <em>research compendium</em>, which is a single package that contains all of the raw data, all the code for all the data analysis pipeline, and dynamic documents that generate all the final reports.</p></li>
+</ul>
+<p>(This slide was taken from <a href="https://github.com/mark-andrews/sips2019" class="uri">https://github.com/mark-andrews/sips2019</a>)</p>
+</div>
+<div id="software-tools-for-reproducible-data-analysis" class="slide section level1">
+<h1>Software tools for reproducible data analysis</h1>
+<ul>
+<li>RMarkdown (and knitr, pandoc, , etc</li>
+<li>Git &amp; GitHub (version control)</li>
+<li>Packrat (package manager)</li>
+<li>testthat</li>
+<li><p>Docker</p></li>
+<li>clean code</li>
+<li><p>documenting code</p></li>
+</ul>
+</div>
+<div id="what-is-git" class="slide section level1">
+<h1>What is git?</h1>
+<ul>
+<li>Distributed version control (you have to whole repo locally)</li>
+<li>Many advantages even when used without a server</li>
+</ul>
+</div>
+<div id="why-use-git" class="slide section level1">
+<h1>Why use git?</h1>
+<ul>
+<li>Backup</li>
+<li>Versioning</li>
+<li>Easy to collaborate</li>
+<li>Easy to try things (revert if things break)</li>
+<li>Easy to check what you changed (why you broke it)</li>
+<li>Easier to check when you broke something (<a href="https://git-scm.com/docs/git-bisect" title="Click when you need it">bisect</a>)</li>
+</ul>
+</div>
+<div id="git" class="slide section level1">
+<h1>Git</h1>
+<p><img src="images/git_branches.png" style="float: right" /></p>
+<ul>
+<li>commit (often!)</li>
+<li>branch</li>
+<li>master (default branch)</li>
+<li>remote</li>
+<li>clone</li>
+<li>pull</li>
+<li>push</li>
+<li>merge</li>
+<li>rebase</li>
+<li>staging area</li>
+<li>tag (<a href="https://github.com/hampei/rstuff/releases" class="uri">https://github.com/hampei/rstuff/releases</a>)</li>
+<li>sha</li>
+<li>stash</li>
+<li>wip</li>
+</ul>
+</div>
+<div id="staging-local-remote" class="slide section level1">
+<h1>Staging, local, remote</h1>
+<div class="figure">
+<img src="images/git_areas.png" alt="Staging area to local to remote" />
+<p class="caption">Staging area to local to remote</p>
+</div>
+</div>
+<div id="github.com" class="slide section level1">
+<h1>Github.com</h1>
+<ul>
+<li>README.md entrypoint for most software projects.</li>
+<li>github pages</li>
+<li>pull request</li>
+<li>fork</li>
+</ul>
+</div>
+<div id="exercise" class="slide section level1">
+<h1>exercise</h1>
+<ul>
+<li>Open README.md and add a line</li>
+<li>Go to git panel</li>
+<li>click diff button</li>
+<li><p>right click file and select revert</p></li>
+<li>Click create branch top right, next to master</li>
+<li>enter a branchname</li>
+<li>Edit README.md again</li>
+<li>click commit</li>
+<li>select file</li>
+<li>enter a message and click commit</li>
+<li><p>click push.</p></li>
+</ul>
+</div>
+<div id="exercise-continued" class="slide section level1">
+<h1>Exercise continued</h1>
+<ul>
+<li>goto <a href="https://github.com/hampei/rstuff/network/members" class="uri">https://github.com/hampei/rstuff/network/members</a></li>
+<li>select your fork</li>
+<li>click <code>New pull request</code></li>
+<li>select your branch on the right</li>
+<li>click <code>Create pull request</code></li>
+<li>Goto <code>Files changed</code></li>
+<li>mouseover a changed line and click <code>+</code> that appears</li>
+<li>type and <code>start a review</code></li>
+<li>top right <code>Finish your review</code></li>
+<li>comment, select <code>Approve</code> and Submit.</li>
+</ul>
+</div>
+<div id="packrat" class="slide section level1">
+<h1>Packrat</h1>
+<ul>
+<li>all libraries are installed within your project</li>
+<li>packrat.lock saves which exact version of each library you are using</li>
+<li>packrat::restore()</li>
+<li>packrat::snapshot()</li>
+</ul>
+</div>
+<div id="coding-style" class="slide section level1">
+<h1>Coding style</h1>
+<ul>
+<li>keep your functions short, preferably less than 10 lines, it must fit on a page</li>
+<li>have a function do one thing, and give it a good name</li>
+<li>name arguments, unless it’s completely clear what it does: <code>mean(1:10, na.rm = TRUE)</code></li>
+<li>give variable good names (no a,b and c)</li>
+<li>do not use magic numbers</li>
+<li>functions should either have no side effects or only side effects</li>
+<li><p>comments explain why, if your explain what the code does, consider refactoring.</p></li>
+<li>DRY (don’t repeat yourself)</li>
+<li>KISS (keep it simple stupid)</li>
+<li><p>YAGNI (you aint gonna need it)</p></li>
+</ul>
+</div>
+<div id="coding-style-syntax-r" class="slide section level1">
+<h1>Coding style syntax R</h1>
+<ul>
+<li>Be consistent.</li>
+<li><p>Use <a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a> for R if there’s no reason for a different one.</p></li>
+<li>function names: lower case, numbers and underscores: <code>calc_the_thing()</code></li>
+<li>always a space after a comma, never before: <code>x[, 1]</code></li>
+<li>spaces: <code>mean(x, na.rm = TRUE)</code>, <code>x == y</code>, <code>x &lt;- y</code></li>
+<li>keep lines under 80ish characters</li>
+<li><p>one command per line, don’t use <code>;</code></p></li>
+</ul>
+</div>
+<div id="functions" class="slide section level1">
+<h1>functions</h1>
+<ul>
+<li>strive to use verbs</li>
+<li>align arguments when the line gets too long</li>
+</ul>
+<pre><code>add_a_to_b &lt;- function(a = &quot;a long argument&quot;,
+                       separator = &quot;, &quot;,
+                       b = &quot;another long argument&quot;) {
+  str_c(a, separator, b) # only use return for early returns
+}</code></pre>
+</div>
+<div id="pipes" class="slide section level1">
+<h1>Pipes</h1>
+<ul>
+<li>Use pipes for a sequence of actions</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">bop</span>(</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">scoop</span>(</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="kw">hop</span>(foo_foo, <span class="dt">through =</span> forest),</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="dt">up =</span> field_mice</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  ), </a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">on =</span> head</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">foo_foo &lt;-<span class="st"> </span><span class="kw">hop</span>(foo_foo, <span class="dt">through =</span> forest)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">foo_foo &lt;-<span class="st"> </span><span class="kw">scoop</span>(foo_foo, <span class="dt">up =</span> field_mice)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">foo_foo &lt;-<span class="st"> </span><span class="kw">bop</span>(foo_foo, <span class="dt">on =</span> head)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">foo_foo <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">hop</span>(<span class="dt">through =</span> forest) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw">scoop</span>(<span class="dt">up =</span> field_mice) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw">bop</span>(<span class="dt">on =</span> head)</a></code></pre></div>
+</div>
+<div id="some-command-for-the-command-line" class="slide section level1">
+<h1>some command for the command line</h1>
+<p>Some things can’t be done within rstudio.</p>
+<ul>
+<li><code>git stash</code> save uncommitted changes and reset to last commit</li>
+<li><code>git stash pop</code> apply the last stashed change</li>
+<li><code>git reset --hard origin/master</code> dangerously throw away local changes and go back to what’s on the server</li>
+<li><code>git revert head</code> make a new commit that reverses the previous one</li>
+</ul>
+</div>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+</body>
+</html>
